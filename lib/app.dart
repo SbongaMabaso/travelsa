@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travelsa/screens/location/locationScreen.dart';
+import 'package:travelsa/screens/locations/locations.dart';
 import 'package:travelsa/style.dart';
 // import 'style.dart';
 
@@ -9,12 +9,11 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        home: const LocationScreen(),
+        home: Locations(),
         theme: ThemeData(
             appBarTheme: const AppBarTheme(
-              // ignore: deprecated_member_use
-              textTheme: TextTheme(title: AppBarTextStyle),
-            ),
+                // ignore: deprecated_member_use
+                textTheme: TextTheme(title: AppBarTextStyle)),
             textTheme: const TextTheme(
               title: TitleTextStyle,
               body1: Body1TextStyle,
