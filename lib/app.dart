@@ -1,5 +1,3 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
 import 'package:travelsa/screens/locationScreen/locationScreen.dart';
 import 'package:travelsa/screens/locations/locations.dart';
@@ -22,7 +20,8 @@ class App extends StatelessWidget {
 
   RouteFactory _routes() {
     return (settings) {
-      final Map<String, dynamic> arguments = settings.arguments;
+      final Map<String, dynamic> arguments =
+          settings.arguments as Map<String, dynamic>;
       Widget screen;
       switch (settings.name) {
         case LocationsRoute:
