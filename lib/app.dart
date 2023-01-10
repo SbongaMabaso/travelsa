@@ -20,8 +20,7 @@ class App extends StatelessWidget {
 
   RouteFactory _routes() {
     return (settings) {
-      final Map<String, dynamic> arguments =
-          settings.arguments as Map<String, dynamic>;
+      final Map arguments = (settings.arguments ?? {}) as Map;
       Widget screen;
       switch (settings.name) {
         case LocationsRoute:
