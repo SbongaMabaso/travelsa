@@ -4,16 +4,18 @@ import 'textSection.dart';
 import '../../models/location.dart';
 
 class LocationScreen extends StatelessWidget {
-  const LocationScreen({super.key});
+  // const LocationScreen({super.key});
+  final int _locationID;
+
+  LocationScreen(this._locationID);
 
   @override
   Widget build(BuildContext context) {
-    final locations = Location.fetchAll();
-    final location = locations.first;
+    final location = Location.fetchByID(_locationID);
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(location.name),
+        title: Text(location!.name),
       ),
       body: Column(
           mainAxisAlignment: MainAxisAlignment.start,
