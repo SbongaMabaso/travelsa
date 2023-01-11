@@ -27,6 +27,10 @@ class Locations extends StatelessWidget {
   Widget _itemBuilder(BuildContext context, Location location) {
     return GestureDetector(
         onTap: () => _onLocationTap(context, location.id),
-        child: Container(child: ImageBanner(location.imagePath)));
+        child: Container(
+            child: Stack(children: [
+          ImageBanner(location.imagePath),
+          TextOverlay(location),
+        ])));
   }
 }
