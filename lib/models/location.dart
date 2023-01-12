@@ -1,4 +1,5 @@
 import './locationFacts.dart';
+import 'package:meta/meta.dart';
 
 class Location {
   final int id;

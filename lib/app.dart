@@ -41,8 +41,10 @@ class App extends StatelessWidget {
         appBarTheme:
             const AppBarTheme(textTheme: TextTheme(subtitle1: AppBarTextStyle)),
         textTheme: const TextTheme(
-          subtitle1: TitleTextStyle,
-          bodyText1: Body1TextStyle,
+          subtitle1: TitleTextStyle, //title
+          subtitle2: SubTitleTextStyle, //subtitle
+          caption: CaptionTextStyle,
+          bodyText1: Body1TextStyle, //body1
         ));
   }
 }

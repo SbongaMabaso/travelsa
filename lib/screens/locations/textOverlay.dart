@@ -16,6 +16,6 @@ class TextOverlay extends StatelessWidget {
         decoration: BoxDecoration(color: Colors.black.withOpercity),
         child: 
       ],
-    )
+    );
   }
 }
