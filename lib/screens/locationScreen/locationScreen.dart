@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:travelsa/widgets/locationTile.dart';
 import '../../widgets/imageBanner.dart';
 import 'textSection.dart';
 import '../../models/location.dart';
 
 class LocationScreen extends StatelessWidget {
-  // const LocationScreen({super.key});
   final int _locationID;
 
-  LocationScreen(this._locationID);
+  const LocationScreen(this._locationID, {super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,13 +17,20 @@ class LocationScreen extends StatelessWidget {
       appBar: AppBar(
         title: Text(location!.name),
       ),
-      body: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: [
-            ImageBanner(location.imagePath),
-            ...textSections(location),
-          ]), //using Cascade to invoke Dart's addAll function
+      body: SingleChildScrollView(
+        child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.stretch,
+            children: [
+              ImageBanner(assetPath: location.imagePath),
+              Padding(
+                padding:
+                    const EdgeInsets.symmetric(vertical: 20.0, horizontal: 4.0),
+                child: LocationTile(location: location),
+              ),
+              ...textSections(location),
+            ]), //using Cascade to invoke Dart's addAll function
+      ),
     );
   }
 
